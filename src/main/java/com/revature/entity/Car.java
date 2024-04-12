@@ -1,6 +1,7 @@
 package com.revature.entity;
 
 import jakarta.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -92,10 +93,6 @@ public class Car {
 
     public Set<User> getLikedByUsers() {
         return likedByUsers;
-    }
-
-    public void setLikedByUsers(Set<User> likedByUsers) {
-        this.likedByUsers = likedByUsers;
     }
 
     // Helper methods

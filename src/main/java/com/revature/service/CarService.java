@@ -5,12 +5,13 @@ import com.revature.repository.CarDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class CarService {
 
-    private CarDAO carDAO;
+    private final CarDAO carDAO;
 
     @Autowired
     public CarService(CarDAO carDAO) {
@@ -21,9 +22,10 @@ public class CarService {
     public Car createCar(Car car) {
         return carDAO.save(car);
     }
+
     // View all cars
-    public Car getAllCars() {
-        return (Car) carDAO.findAll();
+    public List<Car> getAllCars() {
+        return carDAO.findAll();
     }
 
     // View car by ID

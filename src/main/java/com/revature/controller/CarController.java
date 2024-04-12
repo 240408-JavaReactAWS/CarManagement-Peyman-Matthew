@@ -30,7 +30,7 @@ public class CarController {
     // View all cars
     @GetMapping
     public ResponseEntity<List<Car>> getAllCars() {
-        List<Car> cars = (List<Car>) carService.getAllCars();
+        List<Car> cars = carService.getAllCars();
         return ResponseEntity.ok(cars);
     }
 

@@ -13,7 +13,7 @@ import java.util.HashSet;
 @Service
 public class UserService {
 
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
 
     @Autowired
     public UserService(UserDAO userDAO) {
