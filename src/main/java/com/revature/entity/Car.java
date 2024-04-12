@@ -1,13 +1,14 @@
 package com.example.entity;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "cars")
 public class Car {
 
     @Id
-    @Column(name = "carId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -26,5 +27,7 @@ public class Car {
     @Column(nullable = true)
     private String specificDetails;
 
+    @ManyToMany(mappedBy = "favoriteCars")
+    private Set<User> likedByUsers = new HashSet<>();
 
 }
