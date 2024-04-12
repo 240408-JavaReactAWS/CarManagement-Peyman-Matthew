@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.revature.entity;
 
 import jakarta.persistence.*;
 import java.util.HashSet;

@@ -1,14 +1,13 @@
 package com.revature.service;
 
-import com.revature.exception.CarNotFoundException;
 import com.revature.entity.Car;
 import com.revature.repository.CarDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import java.util.List;
 
+@Service
 public class CarService {
 
     private CarDAO carDAO;
@@ -24,12 +23,12 @@ public class CarService {
     }
     // View all cars
     public Car getAllCars() {
-        return carDAO.findAll();
+        return (Car) carDAO.findAll();
     }
 
     // View car by ID
     public Optional<Car> findCarById(Integer id) {
-        return carRepository.findById(id);
+        return carDAO.findById(id);
     }
 
     // Update car by Id

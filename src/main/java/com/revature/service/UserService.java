@@ -1,6 +1,5 @@
 package com.revature.service;
 
-import com.revature.exception.UserNotFoundException;
 import com.revature.entity.Car;
 import com.revature.entity.User;
 import com.revature.repository.UserDAO;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Set;
+import java.util.HashSet;
 
 @Service
 public class UserService {
