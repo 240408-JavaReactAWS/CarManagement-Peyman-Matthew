@@ -42,4 +42,70 @@ public class Car {
         // likedByUsers will be managed by methods
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setSpecificDetails(String specificDetails) {
+        this.specificDetails = specificDetails;
+    }
+
+    public String getSpecificDetails() {
+        return specificDetails;
+    }
+
+    public Set<User> getLikedByUsers() {
+        return likedByUsers;
+    }
+
+    public void setLikedByUsers(Set<User> likedByUsers) {
+        this.likedByUsers = likedByUsers;
+    }
+
+    // Helper methods
+    public void addLikedByUser(User user) {
+        this.likedByUsers.add(user);
+        user.getFavoriteCars().add(this);
+    }
+
+    public void removeLikedByUser(User user) {
+        this.likedByUsers.remove(user);
+        user.getFavoriteCars().remove(this);
+    }
 }
