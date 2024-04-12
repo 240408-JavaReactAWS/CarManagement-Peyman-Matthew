@@ -30,4 +30,16 @@ public class Car {
     @ManyToMany(mappedBy = "favoriteCars")
     private Set<User> likedByUsers = new HashSet<>();
 
+    public Car() {
+    }
+
+    public Car(String make, String model, int year, String color, String specificDetails) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.specificDetails = specificDetails;
+        // likedByUsers will be managed by methods
+    }
+
 }

@@ -27,4 +27,20 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "car_id"))
     private Set<Car> favoriteCars = new HashSet<>();
 
+    public User() {
+    }
+
+    public User(String username, String password, boolean isAdmin) {
+        this.username = username;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
+
+    public User(int id, String username, String password, boolean isAdmin) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
+
 }
