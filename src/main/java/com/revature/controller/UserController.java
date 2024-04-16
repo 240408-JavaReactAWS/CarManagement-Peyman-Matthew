@@ -3,6 +3,7 @@ package com.revature.controller;
 import com.revature.entity.User;
 import com.revature.entity.Car;
 import com.revature.service.UserService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,17 @@ public class UserController {
         return userService.login(username, password)
                 .map(user -> ResponseEntity.ok().build()) // Ideally return a token or user details
                 .orElseGet(() -> ResponseEntity.badRequest().body("Invalid username or password"));
+    }
+
+    // Add a car to favorites
+    @PostMapping("/{userId}/favorite-cars/{carId}")
+    public ResponseEntity<String> addFavoriteCar(@PathVariable Integer userId, @PathVariable Integer carId) {
+        try {
+            userService.addFavoriteCar(userId, carId);
+            return ResponseEntity.ok("Successfully added car to favorites");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Failed to add to favorites");
+        }
     }
 
     // Get favorite cars

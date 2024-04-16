@@ -3,6 +3,7 @@ package com.revature.service;
 import com.revature.entity.Car;
 import com.revature.entity.User;
 import com.revature.repository.UserDAO;
+import com.revature.repository.CarDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +14,16 @@ import java.util.HashSet;
 @Service
 public class UserService {
 
+    @Autowired
     private final UserDAO userDAO;
 
     @Autowired
-    public UserService(UserDAO userDAO) {
+    private final CarDAO carDAO;
+
+    @Autowired
+    public UserService(UserDAO userDAO, CarDAO carDAO) {
         this.userDAO = userDAO;
+        this.carDAO = carDAO;
     }
 
     // Create/register user
@@ -29,6 +35,17 @@ public class UserService {
     public Optional<User> login(String username, String password) {
         return userDAO.findByUsername(username)
                 .filter(user -> user.getPassword().equals(password));
+    }
+
+    // Add car to favorites
+    public User addFavoriteCar(Integer userId, Integer carId) {
+        User user = userDAO.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        Car car = carDAO.findById(carId)
+                .orElseThrow(() -> new RuntimeException("Car not found"));
+
+        user.addFavoriteCar(car);
+        return userDAO.save(user);
     }
 
     // Get favorite cars
