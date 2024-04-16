@@ -24,7 +24,7 @@ public class CarController {
     @PostMapping
     public ResponseEntity<Car> createCar(@RequestBody Car car) {
         Car newCar = carService.createCar(car);
-        return ResponseEntity.ok(newCar);
+        return ResponseEntity.status(201).body(newCar);
     }
 
     // View all cars
@@ -61,7 +61,7 @@ public class CarController {
     public ResponseEntity<Void> deleteCar(@PathVariable Integer id) {
         try {
             carService.deleteCar(id);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.status(204).build();
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
