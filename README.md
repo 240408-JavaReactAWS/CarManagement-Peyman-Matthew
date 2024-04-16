@@ -20,12 +20,24 @@ This application is a simple API for users to interact with a database of cars. 
 2. Persist data using PostgreSQL
 3. Handle various CRUD operations with proper HTTP handling
 
+## User Stories
+1. Create a car
+2. View all cars
+3. View car by ID
+4. Update car by ID
+5. Delete car
+6. Register account
+7. Login account
+8. Add car to favorites
+9. View favorite cars
+
 ## Challenges
 - Setting up workflow with git
 - Learning how to use Optionals and method-reference operators
+- Learning to use JsonManagedReference and JsonBackReference to prevent infinite recursion
 
 ## Moving Forward
-- Fully implement user and admin feature of liking cars and viewing favorite cars
+- Implement Admin privileges
 - Use JUnit to test the service layer
 
 ## Project Requirements
