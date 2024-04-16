@@ -26,6 +26,7 @@ public class User {
     @JoinTable(name = "user_favorites",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "car_id"))
+    @JsonManagedReference
     private Set<Car> favoriteCars = new HashSet<>();
 
     public User() {

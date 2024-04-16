@@ -1,5 +1,6 @@
 package com.revature.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -29,6 +30,7 @@ public class Car {
     private String specificDetails;
 
     @ManyToMany(mappedBy = "favoriteCars")
+    @JsonBackReference
     private Set<User> likedByUsers = new HashSet<>();
 
     public Car() {
