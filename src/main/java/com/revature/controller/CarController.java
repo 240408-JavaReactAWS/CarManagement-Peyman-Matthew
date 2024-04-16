@@ -34,6 +34,7 @@ public class CarController {
         return ResponseEntity.ok(cars);
     }
 
+    // View car by ID
     @GetMapping("/{id}")
     public ResponseEntity<Car> getCarById(@PathVariable Integer id) {
         Optional<Car> carOptional = carService.findCarById(id);

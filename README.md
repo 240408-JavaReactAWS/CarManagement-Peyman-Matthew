@@ -21,10 +21,12 @@ This application is a simple API for users to interact with a database of cars. 
 3. Handle various CRUD operations with proper HTTP handling
 
 ## Challenges
-- x
+- Setting up workflow with git
+- Learning how to use Optionals and method-reference operators
 
 ## Moving Forward
-- x
+- Fully implement user and admin feature of liking cars and viewing favorite cars
+- Use JUnit to test the service layer
 
 ## Project Requirements
 https://github.com/240408-JavaReactAWS/notes-and-demos/blob/main/week-1/project-0-specs.md
