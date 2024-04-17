@@ -13,7 +13,7 @@ This application is a simple API for users to interact with a database of cars. 
 - PostgreSQL
 - DBeaver
 - Postman
-- JUnit
+- ~~JUnit~~
 
 ## Goals
 1. Practice building basic Spring applications
@@ -27,7 +27,7 @@ This application is a simple API for users to interact with a database of cars. 
 4. Update car by ID
 5. Delete car
 6. Register account
-7. Login account
+7. ~~Login account~~
 8. Add car to favorites
 9. View favorite cars
 
